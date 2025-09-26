@@ -9,12 +9,16 @@ import {
   arbitrum,
   base,
   blast,
+  fraxtal,
   gnosis,
+  linea,
+  lisk,
   mainnet,
+  mode,
   optimism,
   polygon,
-  polygonMumbai,
-  sepolia,
+  tac,
+  unichain,
   zora
 } from 'wagmi/chains';
 
@@ -47,15 +51,19 @@ const wagmiConfig = getDefaultConfig({
   ],
   chains: [
     mainnet,
-    sepolia,
     customGnosis,
     polygon,
-    polygonMumbai,
     arbitrum,
     optimism,
     base,
     zora,
-    blast
+    blast,
+    mode,
+    linea,
+    tac,
+    unichain,
+    lisk,
+    fraxtal
   ],
   transports: {
     [mainnet.id]: fallback([
@@ -72,16 +80,6 @@ const wagmiConfig = getDefaultConfig({
         `https://gnosis-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
       )
     ]),
-    [polygonMumbai.id]: fallback([
-      http(),
-      http(
-        `https://polygon-mumbai.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`
-      ),
-      http(
-        `https://polygon-mumbai.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
-      )
-    ]),
-
     [polygon.id]: fallback([
       http(),
       http(`https://polygon.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
@@ -103,13 +101,6 @@ const wagmiConfig = getDefaultConfig({
         `https://opt-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
       )
     ]),
-    [sepolia.id]: fallback([
-      http(),
-      http(`https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
-      http(
-        `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
-      )
-    ]),
     [base.id]: fallback([
       http(),
       http(`https://base.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
@@ -129,6 +120,48 @@ const wagmiConfig = getDefaultConfig({
       http(`https://blast.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
       http(
         `https://blast-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [mode.id]: fallback([
+      http(),
+      http(`https://mode.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://mode-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [linea.id]: fallback([
+      http(),
+      http(`https://linea.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://linea-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [tac.id]: fallback([
+      http(),
+      http(`https://tac.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://tac-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [unichain.id]: fallback([
+      http(),
+      http(`https://unichain.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://unichain-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [lisk.id]: fallback([
+      http(),
+      http(`https://lisk.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://lisk-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
+      )
+    ]),
+    [fraxtal.id]: fallback([
+      http(),
+      http(`https://fraxtal.infura.io/v3/${process.env.NEXT_PUBLIC_RPC_KEY}`),
+      http(
+        `https://fraxtal-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_KEY}`
       )
     ])
   },

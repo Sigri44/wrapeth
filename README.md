@@ -14,3 +14,20 @@ This is a front-end that calls `deposit` and `withdraw` functions on various wra
 3. `yarn dev`
 
 On http://localhost:3000/ you'll see components
+
+## Compatible chains
+
+### EVM (ETH)
+[X] Ethereum
+[X] Polygon
+[X] Arbitrum
+[X] Optimism
+[X] Base
+[X] Zora
+[X] Blast
+[ ] Mode
+[ ] Linea
+
+### EVM (Other)
+[X] Gnosis (XDAI/WXDAI)
+[ ] Tac (TAC/WTAC)
